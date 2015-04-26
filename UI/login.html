@@ -1,0 +1,195 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<style type="text/css">
+body {
+background-color: #f4f4f4;
+color: #5a5656;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+font-size: 16px;
+line-height: 1.5em;
+}
+a { text-decoration: none; }
+h1 { font-size: 1em; }
+h1, p {
+margin-bottom: 10px;
+}
+strong {
+font-weight: bold;
+}
+.uppercase { text-transform: uppercase; }
+
+/* ---------- LOGIN ---------- */
+#login {
+margin: 50px auto;
+width: 300px;
+}
+form fieldset input[type="text"], input[type="password"] {
+background-color: #e5e5e5;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #5a5656;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+font-size: 14px;
+height: 50px;
+outline: none;
+padding: 0px 10px;
+width: 280px;
+-webkit-appearance:none;
+}
+form fieldset input[type="submit"] {
+background-color: #008dde;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #f4f4f4;
+cursor: pointer;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+height: 50px;
+text-transform: uppercase;
+width: 300px;
+-webkit-appearance:none;
+}
+form fieldset a {
+color: #5a5656;
+font-size: 10px;
+}
+form fieldset a:hover { text-decoration: underline; }
+.btn-round {
+background-color: #5a5656;
+border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+color: #f4f4f4;
+display: block;
+font-size: 12px;
+height: 50px;
+line-height: 50px;
+margin: 30px 125px;
+text-align: center;
+text-transform: uppercase;
+width: 50px;
+}
+.req {
+  	margin:2px;
+  	color:$main;
+  }
+</style>
+<script type="text/javascript">
+
+function Validate1()   
+{ 
+	var usr = document.forms["form1"]["username"].value;
+	var pw = document.forms["form1"]["password"].value;
+	if (usr == null || usr == "")
+	{
+		alert("Username field must be specified");
+		return false;
+	}
+	if(pw == null || pw == "")
+	{
+		alert("Password field must be specified");
+		return false;
+	}
+}
+
+function Validate2()
+{
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	
+	var email1 = document.forms["register"]["email1"].value;
+	if(email1.value.match(mailformat))
+		return true;
+	else 
+	{
+		alert("Email ID doesnt not exist.");
+		email1.focus();
+		return false;
+	}
+
+	var email2 = document.forms["register"]["email2"].value;
+	
+	if(email2 == email1)
+	{
+		return true;
+	}
+	else
+	{
+		alert("Email ID's entered do not match!")'
+		return false;
+	}
+	var pw1 = document.forms["register"]["pw1"].value;
+	
+	if(pw1 == null || pw1 =="")
+	{
+		alert("Password must be specified.");
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+	
+	var pw2 = document.forms["register"]["pw2"].value;
+	
+	if(pw2 == pw1)
+	{
+		return true;
+	}
+	else
+	{
+		alert("Passwords entered do not match!")'
+		return false;
+	}
+}  
+</script>
+</head>
+<body>
+<div id="login">
+<h1><strong>Welcome.</strong> Please login.</h1>
+<form action="javascript:void(0);" name = "form1" method="post" onsubmit = "return Validate1()">
+<fieldset>
+<p><input type="text" required value="Username" name = "username" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' "></p>
+<p><input type="password" required value="Password" name = "password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "></p>
+<p><a href="forgotpw.html">Forgot Password?</a></p>
+<p><input type="submit" value="Login" name = "login"></p>
+</fieldset>
+</form>
+<p><span class="btn-round">or</span></p>
+<p>
+</div>
+<div id = "login">
+<h1><strong>Sign Up. </strong></h1>
+<form action="/" name = "register" method = "post" onsubmit = "return Validate2()">
+<fieldset>
+<table>
+<td><p><input type = "text" required value="First Name" name = "fname" onBlur="if(this.value=='')this.value='First Name'" onFocus="if(this.value=='First Name')this.value='' "></td></p>
+<td><p><input type = "text" required value="Last Name" name = "lname" onBlur="if(this.value=='')this.value='Last Name'" onFocus="if(this.value=='Last Name')this.value='' "></td></p>
+</table>
+<p><input id = "#email1"type = "text" required value="Email" name = "email1" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value=''"></p>
+<p><input  id = "#email2"type = "text" required value="Re-Enter Email" name = "email2" onBlur="if(this.value=='')this.value='Re-Enter Email'" onFocus="if(this.value=='Re-Enter Email')this.value=''"></p>
+<table>
+</tr>
+<td><p><input type="radio" name="sex" value="male">Male</p></td>
+<td><p><input type="radio" name="sex" value="female">Female</p></td>
+</tr>
+<tr>
+<p><td>Password</td></p>
+<p><td><input id = "#pw1" type="password" required value="Password" name "pw1" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "></td></p>
+</tr>
+<tr>
+<p><td>Confirm Password </td></p>
+<p><td><input id = "#pw2" type="password" required value="Confirm Password" name = "pw2" onBlur="if(this.value=='')this.value='Confirm Password'" onFocus="if(this.value=='Confirm Password')this.value='' "></td></p>
+</tr>
+</table>
+<p><input type = "submit" value = "Submit">
+</fieldset>
+</form>
+</p>
+</div> 
+</body>
+</html>

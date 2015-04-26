@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<style type="text/css">
+body {
+background-color: #f4f4f4;
+color: #5a5656;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+font-size: 16px;
+line-height: 1.5em;
+}
+a { text-decoration: none; }
+h1 { font-size: 1em; }
+h1, p {
+margin-bottom: 10px;
+}
+strong {
+font-weight: bold;
+}
+.uppercase { text-transform: uppercase; }
+
+/* ---------- LOGIN ---------- */
+#login {
+margin: 50px auto;
+width: 300px;
+}
+form fieldset input[type="text"], input[type="password"] {
+background-color: #e5e5e5;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #5a5656;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+font-size: 14px;
+height: 50px;
+outline: none;
+padding: 0px 10px;
+width: 280px;
+-webkit-appearance:none;
+}
+form fieldset input[type="submit"] {
+background-color: #008dde;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #f4f4f4;
+cursor: pointer;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+height: 50px;
+text-transform: uppercase;
+width: 300px;
+-webkit-appearance:none;
+}
+form fieldset a {
+color: #5a5656;
+font-size: 10px;
+}
+form fieldset a:hover { text-decoration: underline; }
+.btn-round {
+background-color: #5a5656;
+border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+color: #f4f4f4;
+display: block;
+font-size: 12px;
+height: 50px;
+line-height: 50px;
+margin: 30px 125px;
+text-align: center;
+text-transform: uppercase;
+width: 50px;
+}
+.req {
+  	margin:2px;
+  	color:$main;
+  }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3 class="text-center">Forgot Password?</h3>
+                          <p>If you have forgotten your password - reset it here.</p>
+                            <div class="panel-body">
+                              
+                              <form class="form"><!--start form--><!--add form action as needed-->
+                                <fieldset>
+                                  <div class="form-group">
+                                    <div class="input-group">
+                                     
+                                      <input id="emailInput" placeholder="email address" class="form-control" type="text" oninvalid="setCustomValidity('Please enter a valid email address!')" onchange="try{setCustomValidity('')}catch(e){}" required="">
+                                     
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                  </div>
+                                </fieldset>
+                              </form><!--/end form-->
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</head>
+</html>
